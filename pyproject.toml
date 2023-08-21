@@ -4,7 +4,7 @@ requires = ["hatchling"]
 
 [project]
 name = "binsparse"
-version = "0.0.1"
+version = "0.0.1.dev0"
 description = "binsparse implementation in python"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -15,9 +15,9 @@ authors = [
 maintainers = [
     {name = "Isaac Virshup", email = "ivirshup@gmail.com"},
 ]
-urls.Documentation = "https://binsparse.readthedocs.io/"
-urls.Source = "https://github.com/ivirshup/binsparse"
-urls.Home-page = "https://github.com/ivirshup/binsparse"
+urls.Documentation = "https://binsparse-python.readthedocs.io/"
+urls.Source = "https://github.com/ivirshup/binsparse-python"
+urls.Home-page = "https://github.com/ivirshup/binsparse-python"
 dependencies = [
     "scipy",
     "numpy",
@@ -123,7 +123,6 @@ convention = "numpy"
 skip = [
     "tests",
     "src/**/__init__.py",
-    "src/**/basic.py",
     "docs/api.md",
     "docs/changelog.md",
     "docs/references.bib",

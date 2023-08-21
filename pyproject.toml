@@ -19,9 +19,10 @@ urls.Documentation = "https://binsparse.readthedocs.io/"
 urls.Source = "https://github.com/ivirshup/binsparse"
 urls.Home-page = "https://github.com/ivirshup/binsparse"
 dependencies = [
-    "anndata",
+    "scipy",
+    "numpy",
     # for debug logging (referenced from the issue template)
-    "session-info"
+    "session-info",
 ]
 
 [project.optional-dependencies]
@@ -46,6 +47,8 @@ doc = [
 test = [
     "pytest",
     "pytest-cov",
+    "h5py",
+    "zarr",
 ]
 
 [tool.coverage.run]

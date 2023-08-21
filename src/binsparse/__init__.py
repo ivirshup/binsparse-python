@@ -1,7 +1,6 @@
 from importlib.metadata import version
 
-from . import pl, pp, tl
-
-__all__ = ["pl", "pp", "tl"]
+from binsparse._io.api import read, write
 
 __version__ = version("binsparse")
+del version

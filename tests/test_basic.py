@@ -21,10 +21,27 @@ def store(request, tmp_path):
         return zarr.group()
 
 
-@pytest.mark.parametrize("format", ["csr", "csc", "coo"])
-def test_basic_roundtrip(store, format):
-    orig = sparse.random(100, 100, density=0.1, format=format)
+@pytest.mark.parametrize("fmt", ["csr", "csc", "coo"])
+def test_basic_roundtrip(store, fmt):
+    orig = sparse.random(100, 100, density=0.1, format=fmt)
     binsparse.write(store, "X", orig)
     from_disk = binsparse.read(store["X"])
 
     assert_equal(orig, from_disk)
+
+
+@pytest.mark.parametrize("fmt", ["csr", "csc", "coo"])
+def test_metadata(store, fmt):
+    from binsparse._io.utils import read_attr
+
+    orig = sparse.random(100, 100, density=0.1, format=fmt)
+    binsparse.write(store, "X", orig)
+    metadata = read_attr(store["X"], "binsparse")
+
+    assert metadata["format"] == fmt.upper()
+    assert metadata["shape"] == list(orig.shape)
+
+    from binsparse._io.methods import _DTYPE_STR_REGISTRY
+
+    for k, v in metadata["data_types"].items():
+        assert v in _DTYPE_STR_REGISTRY.values(), f"unrecognized dtype for '{k}': {v}"

@@ -72,7 +72,6 @@ napoleon_use_param = True
 myst_heading_anchors = 6  # create anchors for h1-h6
 myst_enable_extensions = [
     "amsmath",
-    "colon_fence",
     "deflist",
     "dollarmath",
     "html_image",
@@ -92,9 +91,16 @@ source_suffix = {
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
-    "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
+    "scipy": ("https://docs.scipy.org/doc/scipy/", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
+    "zarr": ("https://zarr.readthedocs.io/en/stable/", None),
+    "h5py": ("https://docs.h5py.org/en/latest/", None),
 }
+# qualname_overrides = {
+#     "h5py._hl.group.Group": "h5py.Group",
+#     "h5py._hl.files.File": "h5py.File",
+#     "h5py._hl.dataset.Dataset": "h5py.Dataset",
+# }
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

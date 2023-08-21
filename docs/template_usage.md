@@ -27,9 +27,9 @@ You can follow the instructions directly on [github quickstart guide][].
 Since `cruft` already populated the local repository of your project with all the necessary files, we suggest to _NOT_ initialize the repository with a `README.md` file or `.gitignore`, because you might encounter git conflicts on your first push.
 If you are familiar with git and knows how to handle git conflicts, you can go ahead with your preferred choice.
 
-:::{note}
+```{note}
 If you are looking at this document in the [cookiecutter-scverse-instance][] repository documentation, throughout this document the name of the project is `cookiecutter-scverse-instance`. Otherwise it should be replaced by your new project name: `binsparse`.
-:::
+```
 
 Now that your new project repository has been created on github at `https://github.com/ivirshup/binsparse` you can push your first commit to github.
 To do this, simply follow the instructions on your github repository page or a more verbose walkthrough here:
@@ -45,7 +45,7 @@ git commit -m "first commit"
 
 You'll notice that the command `git commit` installed a bunch of packages and triggered their execution: those are pre-commit! To read more about what they are and what they do, you can go to the related section [Pre-commit checks](#pre-commit-checks) in this document.
 
-:::{note}
+````{note}
 There is a chance that `git commit -m "first commit"` fails due to the `prettier` pre-commit formatting the file `.cruft.json`. No problem, you have just experienced what pre-commit checks do in action. Just go ahead and re-add the modified file and try to commit again:
 
 ```bash
@@ -53,7 +53,7 @@ There is a chance that `git commit -m "first commit"` fails due to the `prettier
  git commit -m "first commit"
 ```
 
-:::
+````
 
 Now that all the files of the newly created project have been committed, go ahead with the remaining steps:
 
@@ -290,22 +290,8 @@ add it to Ruff’s [`external = [...]`](https://beta.ruff.rs/docs/settings/#exte
 ```
 
 [ruff]: https://beta.ruff.rs/docs/
+
 [ruff guide]: https://beta.ruff.rs/docs/configuration/#suppressing-errors
-
-### API design
-
-Scverse ecosystem packages should operate on [AnnData][] and/or [MuData][] data structures and typically use an API
-as originally [introduced by scanpy][scanpy-api] with the following submodules:
-
--   `pp` for preprocessing
--   `tl` for tools (that, compared to `pp` generate interpretable output, often associated with a corresponding plotting
-    function)
--   `pl` for plotting functions
-
-You may add additional submodules as appropriate. While we encourage to follow a scanpy-like API for ecosystem packages,
-there may also be good reasons to choose a different approach, e.g. using an object-oriented API.
-
-[scanpy-api]: https://scanpy.readthedocs.io/en/stable/usage-principles.html
 
 (vcs-based-versioning)=
 
@@ -355,7 +341,7 @@ It may happen that a template sync results in a merge conflict. If this is the c
 diff is created. You need to manually address these changes and remove the `.rej` file when you are done.
 The pull request can only be merged after all `*.rej` files have been removed.
 
-:::{tip}
+```{tip}
 The following hints may be useful to work with the template sync:
 
 -   GitHub automatically disables scheduled actions if there has been not activity to the repository for 60 days.
@@ -365,7 +351,7 @@ The following hints may be useful to work with the template sync:
     [cruft documentation][cruft-update-project].
 -   To disable the sync entirely, simply remove the file `.github/workflows/sync.yaml`.
 
-:::
+```
 
 [cruft]: https://cruft.github.io/cruft/
 [cruft-update-project]: https://cruft.github.io/cruft/#updating-a-project

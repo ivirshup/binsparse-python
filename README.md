@@ -3,9 +3,9 @@
 [![Tests][badge-tests]][link-tests]
 [![Documentation][badge-docs]][link-docs]
 
-[badge-tests]: https://img.shields.io/github/actions/workflow/status/ivirshup/binsparse/test.yaml?branch=main
-[link-tests]: https://github.com/ivirshup/binsparse/actions/workflows/test.yml
-[badge-docs]: https://img.shields.io/readthedocs/binsparse
+[badge-tests]: https://img.shields.io/github/actions/workflow/status/ivirshup/binsparse-python/test.yaml?branch=main
+[link-tests]: https://github.com/ivirshup/binsparse-python/actions/workflows/test.yml
+[badge-docs]: https://img.shields.io/readthedocs/binsparse-python
 
 [binsparse](https://github.com/graphblas/binsparse-specification) implementation in python.
 

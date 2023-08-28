@@ -43,6 +43,9 @@ doc = [
     "ipykernel",
     "ipython",
     "sphinx-copybutton",
+    # For better type hints
+    "h5py",
+    "zarr",
 ]
 test = [
     "pytest",

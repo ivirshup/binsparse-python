@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 try:
     from zarr.core import Array as ZarrArray
     from zarr.hierarchy import Group as ZarrGroup

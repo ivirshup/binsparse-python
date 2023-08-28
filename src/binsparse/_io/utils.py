@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from functools import singledispatch
 
 from binsparse._types import ArrayTypes, GroupTypes, H5Array, H5Group, ZarrArray, ZarrGroup

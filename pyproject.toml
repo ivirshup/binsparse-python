@@ -7,7 +7,7 @@ name = "binsparse"
 version = "0.0.1.dev0"
 description = "binsparse implementation in python"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = {file = "LICENSE"}
 authors = [
     {name = "Isaac Virshup"},

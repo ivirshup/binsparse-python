@@ -1,0 +1,14 @@
+diff a/pyproject.toml b/pyproject.toml	(rejected hunks)
+@@ -42,10 +41,11 @@ doc = [
+     "ipykernel",
+     "ipython",
+     "sphinx-copybutton",
++    "pandas",
+ ]
+ test = [
+     "pytest",
+-    "pytest-cov",
++    "coverage",
+ ]
+ 
+ [tool.coverage.run]

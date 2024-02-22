@@ -1,0 +1,31 @@
+diff a/pyproject.toml b/pyproject.toml	(rejected hunks)
+@@ -21,14 +21,13 @@ urls.Home-page = "https://github.com/ivirshup/binsparse"
+ dependencies = [
+     "anndata",
+     # for debug logging (referenced from the issue template)
+-    "session-info"
++    "session-info",
+ ]
+ 
+ [project.optional-dependencies]
+ dev = [
+-    # CLI for bumping the version number
+     "pre-commit",
+-    "twine>=4.0.2"
++    "twine>=4.0.2",
+ ]
+ doc = [
+     "docutils>=0.8,!=0.18.*,!=0.19.*",
+@@ -42,10 +41,11 @@ doc = [
+     "ipykernel",
+     "ipython",
+     "sphinx-copybutton",
++    "pandas",
+ ]
+ test = [
+     "pytest",
+-    "pytest-cov",
++    "coverage",
+ ]
+ 
+ [tool.coverage.run]

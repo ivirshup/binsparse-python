@@ -46,6 +46,7 @@ doc = [
     # For better type hints
     "h5py",
     "zarr",
+    "python-graphblas[default]",
 ]
 test = [
     "pytest",

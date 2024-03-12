@@ -21,6 +21,7 @@ urls.Home-page = "https://github.com/ivirshup/binsparse-python"
 dependencies = [
     "scipy",
     "numpy",
+    "python-graphblas[default]",
     # for debug logging (referenced from the issue template)
     "session-info",
 ]
@@ -46,7 +47,6 @@ doc = [
     # For better type hints
     "h5py",
     "zarr",
-    "python-graphblas[default]",
 ]
 test = [
     "pytest",

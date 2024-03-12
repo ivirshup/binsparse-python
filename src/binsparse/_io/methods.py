@@ -80,6 +80,7 @@ def read_csr(group: GroupTypes, struct: str) -> gb.Matrix | sparse.csr_matrix:
     assert metadata["format"] == "CSR"
     shape = tuple(metadata["shape"])
 
+    print(shape)
     if struct.lower() == "scipy":
         return sparse.csr_matrix(
             (
@@ -94,8 +95,6 @@ def read_csr(group: GroupTypes, struct: str) -> gb.Matrix | sparse.csr_matrix:
             group["indices_1"][()],
             group["pointers_to_1"][()],
             group["values"][()],
-            nrows=shape[0],
-            ncols=shape[1],
         )
     else:
         raise NotImplementedError(f"no implementation for returning data using {struct}")
@@ -165,8 +164,6 @@ def read_csc(group: GroupTypes, struct: str) -> gb.Matrix | sparse.csc_matrix:
             group["indices_1"][()],
             group["pointers_to_1"][()],
             group["values"][()],
-            nrows=shape[0],
-            ncols=shape[1],
         )
     else:
         raise NotImplementedError(f"no implementation for returning data using {struct}")
@@ -238,8 +235,6 @@ def read_coo(group: GroupTypes, struct: str) -> gb.Matrix | sparse.coo_matrix:
             group["indices_0"][()],
             group["indices_1"][()],
             group["values"][()],
-            nrows=shape[0],
-            ncols=shape[1],
         )
     else:
         raise NotImplementedError(f"no implementation for returning data using {struct}")

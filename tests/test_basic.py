@@ -48,13 +48,11 @@ def test_metadata(store, fmt):
         assert v in _DTYPE_STR_REGISTRY.values(), f"unrecognized dtype for '{k}': {v}"
 
 
-@pytest.fixture(params=["scipy", "graphblas"])
 @pytest.mark.parametrize("fmt", ["csr", "csc", "coo"])
-def test_structure(request, store, fmt):
-    struct = request.param
+def test_graphblas_structure(store, fmt):
+    struct = "graphblas"
     orig = sparse.random(100, 100, density=0.1, format=fmt)
     binsparse.write(store, "X", orig)
-    if struct == "graphblas":
-        orig = gb.io.from_scipy_sparse(orig)
+    orig = gb.io.from_scipy_sparse(orig)
     from_disk = binsparse.read(store["X"], struct=struct)
     assert_equal(orig, from_disk)

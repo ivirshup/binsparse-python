@@ -80,7 +80,6 @@ def read_csr(group: GroupTypes, struct: str) -> gb.Matrix | sparse.csr_matrix:
     assert metadata["format"] == "CSR"
     shape = tuple(metadata["shape"])
 
-    print(shape)
     if struct.lower() == "scipy":
         return sparse.csr_matrix(
             (
@@ -92,8 +91,8 @@ def read_csr(group: GroupTypes, struct: str) -> gb.Matrix | sparse.csr_matrix:
         )
     elif struct.lower() == "graphblas":
         return gb.Matrix.from_csr(
-            group["indices_1"][()],
             group["pointers_to_1"][()],
+            group["indices_1"][()],
             group["values"][()],
         )
     else:
@@ -161,8 +160,8 @@ def read_csc(group: GroupTypes, struct: str) -> gb.Matrix | sparse.csc_matrix:
         )
     elif struct.lower() == "graphblas":
         return gb.Matrix.from_csc(
-            group["indices_1"][()],
             group["pointers_to_1"][()],
+            group["indices_1"][()],
             group["values"][()],
         )
     else:
